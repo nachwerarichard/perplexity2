@@ -1,0 +1,49 @@
+.guide-container {
+    width: 635px;
+    height: 433px;
+    position: relative;
+    background: white;
+}
+
+.step {
+    width: 87px;
+    height: 81px;
+    position: absolute;
+    background: #033541;
+    border-radius: 9999px;
+}
+
+.separator {
+    height: 0px;
+    position: absolute;
+    transform-origin: 0 0;
+    border: 1px #033541 solid;
+}
+
+.step-label {
+    width: 43px;
+    height: 25px;
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.step-description {
+    width: 86px;
+    height: 101px;
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.step-number {
+    margin-bottom: 5px;
+}

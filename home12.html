@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progressive Bar</title>
+<style>
+  .progress-bar {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+  }
+  .step {
+    width: 20%;
+    float: left;
+    text-align: center;
+    position: relative;
+  }
+  .step:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    background-color: white;
+    display: block;
+    margin: 0 auto 10px auto;
+    position: relative;
+    z-index: 1;
+  }
+  .step:last-child:before {
+    border: 2px solid transparent;
+  }
+  .step.active:before {
+    background-color: #007bff;
+  }
+  .connector {
+    width: calc(100% - 20px);
+    height: 2px;
+    background-color: #007bff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+  .connector:last-child {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar">
+  <div class="step active">Step 1</div>
+  <div class="connector"></div>
+  <div class="step">Step 2</div>
+  <div class="connector"></div>
+  <div class="step">Step 3</div>
+  <div class="connector"></div>
+  <div class="step">Step 4</div>
+</div>
+
+<script>
+  // JavaScript to add active class to steps as they are completed
+  document.addEventListener("DOMContentLoaded", function() {
+    const steps = document.querySelectorAll('.step');
+    steps.forEach(function(step, index) {
+      step.addEventListener('click', function() {
+        steps.forEach(function(s, i) {
+          if (i <= index) {
+            s.classList.add('active');
+          } else {
+            s.classList.remove('active');
+          }
+        });
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
